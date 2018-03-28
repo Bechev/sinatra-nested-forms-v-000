@@ -47,53 +47,53 @@ describe "FormsLab::App" do
     end
   end
 
-  # describe "POST '/pirates'" do
-  #   before do
-  #     post '/pirates', {
-  #       "pirate"=> {
-  #         "name"=>"Ian",
-  #         "weight"=>"165",
-  #         "height"=>"95",
-  #         "ships"=> [
-  #           {
-  #             "name"=>"Titanic",
-  #             "type"=>"Steam Liner",
-  #             "booty"=>"Silver"
-  #           },
-  #           {
-  #             "name"=> "Carpathia",
-  #             "type"=>"Rescue Ship",
-  #             "booty"=>"Inner Tubes"
-  #           }
-  #         ]
-  #       }
-  #     }
-  #   end
-  #
-  #   after do
-  #     Ship.clear
-  #   end
-  #
-  #   it "returns a 200 status code" do
-  #     expect(last_response.status).to eq(200)
-  #   end
-  #
-  #   it "displays the pirate information upon form submission" do
-  #     expect(last_response.body).to include("Ian")
-  #     expect(last_response.body).to include("165")
-  #     expect(last_response.body).to include("95")
-  #   end
-  #
-  #   it "displays the first ship's information upon form submission" do
-  #     expect(last_response.body).to include("Titanic")
-  #     expect(last_response.body).to include("Steam Liner")
-  #     expect(last_response.body).to include("Silver")
-  #   end
-  #
-  #   it "displays the second ship's information upon form submission" do
-  #     expect(last_response.body).to include("Carpathia")
-  #     expect(last_response.body).to include("Rescue Ship")
-  #     expect(last_response.body).to include("Inner Tubes")
-  #   end
-  # end
+  describe "POST '/pirates'" do
+    before do
+      post '/pirates', {
+        "pirate"=> {
+          "name"=>"Ian",
+          "weight"=>"165",
+          "height"=>"95",
+          "ships"=> [
+            {
+              "name"=>"Titanic",
+              "type"=>"Steam Liner",
+              "booty"=>"Silver"
+            },
+            {
+              "name"=> "Carpathia",
+              "type"=>"Rescue Ship",
+              "booty"=>"Inner Tubes"
+            }
+          ]
+        }
+      }
+    end
+
+    after do
+      Ship.clear
+    end
+
+    it "returns a 200 status code" do
+      expect(last_response.status).to eq(200)
+    end
+
+    it "displays the pirate information upon form submission" do
+      expect(last_response.body).to include("Ian")
+      expect(last_response.body).to include("165")
+      expect(last_response.body).to include("95")
+    end
+
+    it "displays the first ship's information upon form submission" do
+      expect(last_response.body).to include("Titanic")
+      expect(last_response.body).to include("Steam Liner")
+      expect(last_response.body).to include("Silver")
+    end
+
+    it "displays the second ship's information upon form submission" do
+      expect(last_response.body).to include("Carpathia")
+      expect(last_response.body).to include("Rescue Ship")
+      expect(last_response.body).to include("Inner Tubes")
+    end
+  end
 end
